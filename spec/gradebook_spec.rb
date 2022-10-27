@@ -84,7 +84,7 @@ RSpec.describe Gradebook do
       course2.enroll(student3)
       course2.enroll(student4)
 
-      expect(gradebook.students_below(70)).to eq([student1, student2])
+      expect(gradebook.students_grade_below(70)).to eq([student1, student2])
     end
   end
 end
