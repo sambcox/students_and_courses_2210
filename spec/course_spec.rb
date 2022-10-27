@@ -29,10 +29,21 @@ RSpec.describe Course do
   end
 
   describe '#full?' do
-    it 'can tell if a class is full' do
+    it 'can tell if a class is not full' do
       course = Course.new("Calculus", 2)
 
       expect(course.full?).to be false
+    end
+
+    it 'can tell if a class is full' do
+      course = Course.new("Calculus", 2)
+      student1 = Student.new({name: "Morgan", age: 21})
+      student2 = Student.new({name: "Jordan", age: 29})
+
+      course.enroll(student1)
+      course.enroll(student2)
+
+      expect(course.full?).to be true
     end
   end
 
