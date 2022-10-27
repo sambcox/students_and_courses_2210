@@ -8,4 +8,8 @@ class Gradebook
   def courses
     @courses.map { |course| course.name}
   end
+
+  def add_course(course)
+    @courses << course
+  end
 end
