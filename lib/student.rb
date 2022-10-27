@@ -1,6 +1,8 @@
 class Student
+  attr_reader :scores
   def initialize(info_input)
     @student_info = info_input
+    @scores = []
   end
 
   def name
