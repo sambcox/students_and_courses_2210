@@ -6,4 +6,8 @@ class Student
   def name
     @student_info[:name]
   end
+
+  def age
+    @student_info[:age]
+  end
 end
