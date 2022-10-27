@@ -4,4 +4,8 @@ class Gradebook
     @instructor = instructor
     @courses = []
   end
+
+  def courses
+    @courses.map { |course| course.name}
+  end
 end
