@@ -15,5 +15,11 @@ RSpec.describe Gradebook do
 
       expect(gradebook.instructor).to eq("Nathan")
     end
+
+    it 'has no courses by default' do
+      gradebook = Gradebook.new("Nathan")
+
+      expect(gradebook.courses).to eq([])
+    end
   end
 end
