@@ -12,4 +12,8 @@ class Gradebook
   def add_course(course)
     @courses << course
   end
+
+  def all_students
+    @courses.map { |course| course.students}.flatten
+  end
 end
