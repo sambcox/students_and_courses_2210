@@ -1,5 +1,5 @@
 class Gradebook
-  attr_reader :instructor
+  attr_reader :instructor, :course_specific_grades
   def initialize(instructor)
     @instructor = instructor
     @courses = []
@@ -25,4 +25,11 @@ class Gradebook
   def students_grade_in_range(grade_input_low, grade_input_high)
     all_students.find_all { |student| student.grade < grade_input_high && student.grade > grade_input_low}
   end
+
+  def add_grade_course
+    @courses.each do |course|
+      course_specific_grades[course] = course.course_scores
+    end
+  end
+
 end

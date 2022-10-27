@@ -151,6 +151,7 @@ RSpec.describe Gradebook do
       course2.course_log_score(student4, 90)
       gradebook.add_course(course1)
       gradebook.add_course(course2)
+      gradebook.add_grade_course
 
       expect(gradebook.course_specific_grades).to eq({course1 => {student1 => [78, 82], student2 => [75,79]}, course2 => {student1 => [54, 58], student2 => [65,68], student3 => [81, 85], student4 => [88, 90]}})
     end
