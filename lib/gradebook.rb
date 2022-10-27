@@ -3,6 +3,7 @@ class Gradebook
   def initialize(instructor)
     @instructor = instructor
     @courses = []
+    @course_specific_grades = {}
   end
 
   def courses

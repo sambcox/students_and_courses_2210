@@ -59,4 +59,19 @@ RSpec.describe Course do
       expect(course.students).to eq([student1, student2])
     end
   end
+
+  describe 'course_log_score' do
+    it 'can add a score to course_scores' do
+      course = Course.new("Calculus", 2)
+      student1 = Student.new({name: "Morgan", age: 21})
+      student2 = Student.new({name: "Jordan", age: 29})
+
+      course.course_log_score(student1, 78)
+      course.course_log_score(student1, 82)
+      course.course_log_score(student2, 75)
+      course.course_log_score(student2, 79)
+
+      expect(course.course_scores).to eq({student1 => [78, 82], student2 => [75,79]})
+    end
+  end
 end
