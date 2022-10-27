@@ -9,5 +9,11 @@ RSpec.describe Gradebook do
 
       expect(gradebook).to be_a(Gradebook)
     end
+
+    it 'has an instructor' do
+      gradebook = Gradebook.new("Nathan")
+
+      expect(gradebook.instructor).to eq("Nathan")
+    end
   end
 end
